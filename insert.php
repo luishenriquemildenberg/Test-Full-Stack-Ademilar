@@ -1,5 +1,4 @@
 <?php
-    
     include('./api/db.class.php');
 
     $dbClass = new DataBase(); //instanciando a classe

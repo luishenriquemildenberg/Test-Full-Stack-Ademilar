@@ -2,22 +2,22 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
+	<meta charset="utf-8">
+	<!-- <img src="ademilar.jpg" alt="some text" width=500 height=350> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
     <title>Teste Ademilar</title>
   </head>
-  <body>    
-
+  <body >    
 	<div class="principal-Login">
 		<div class="box-login">
 				<form method="POST" action="" onsubmit="return login()">
 					<span class="form-title">
-						<h1>Área do cliente</h1>
+						<h1 style="font-size:30px">Área do cliente</h1>
 					</span>
 					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
 						<input class="input100 form-required" type="text" name="email" placeholder="E-mail">
@@ -26,13 +26,13 @@
 						<input class="input100 form-required" type="password" name="pass" placeholder="Password">
 					</div>
 					<div class="container-login100-form-btn">
-						<button type="submit" class="login100-form-btn">
+						<button type="submit" class="btn btn-lighty">
 							Acessar
 						</button>
 					</div>
 			</div>
-	</div>
-	 
+		</div>
+	</div> 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script type="text/javascript">
 		
@@ -49,7 +49,7 @@
 			
 				$.ajax({
 					method:'POST'
-					, url: '/TesteAdemilar/api/login.php'
+					, url: '/Test-Full-Stack-Ademilar/api/login.php'
 					, data: $('form').serialize()
 					, dataType: 'JSON'
 				}).done((dados) => {
@@ -57,7 +57,7 @@
 					if(dados.cliente)
 					{ 
 						alert('Usuário Logado ');
-						location.href = '/TesteAdemilar/cliente.html'
+						location.href = '/Test-Full-Stack-Ademilar/cliente.html'
 					}else{
 						alert('Usuário Inválido');
 					}

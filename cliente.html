@@ -1,25 +1,19 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
+    <!-- meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-    <title>Clientes</title>
-
-	
-	<style>
-	 
-	</style>
-
+    <title>Clientes</title>	
   </head>
   <body> 
     <div class="container">
 		<br/>
-        <h2>Cadastro de Cliente</h2>
+        <h1>Cadastro de Cliente</h1>
         <div class="cssformulario">
 		
 		<form method="POST" action="insert.php">
@@ -43,13 +37,28 @@
 			<table class="table">
 				<thead>
 					<tr>
+						<h2>Nossos Clientes</h2>
 						<th>Nome</th>
 						<th>E-mail</th>
-					</tr>
+					</tr>					
 				</thead>
+				<!-- <script>
+					function confirmacao(id) {
+			
+						var resposta = confirm("Deseja remover esse registro?");
+			
+						if (resposta == true) {
+							window.location.href = "delete.php?id=" + id;
+						} else {
+							window.location.href = "select.php";
+						}
+					}
+				</script> -->
+				
 				<tbody id="clientes">
 				
 				</tbody>
+				
 			</table>
 			
         </div>
@@ -62,7 +71,7 @@
          
 		$.ajax({
 			method:'GET'
-			, url: '/TesteAdemilar/api/cliente.php'
+			, url: '/Test-Full-Stack-Ademilar/api/cliente.php'
 			, dataType: 'JSON'
 		}).done((dados) => {
 			

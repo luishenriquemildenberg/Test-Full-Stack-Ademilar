@@ -1,8 +1,20 @@
 html,body {
 font-family:Arial;
 background:#222;
+
+}
+h1{
+    font-size:30px;
 }
 
-.box-login {position:fixed;right: 0;width:250px;background:#FFF;border-radius:10px;padding:10px;margin:10%}
+body{
+background-image: url(../ademilar.jpg); 
+height: 100vh;
+background-size: cover;
+background-position: center;
+}
+
+
+.box-login {position:fixed;right: -72px;width:250px;background:#FFF;border-radius:10px;padding:10px;margin:10%;margin-top:18%}
 .box-login input {width:90%;display:block;margin:10px 0;padding:5px;}
-.box-login button {background:#222;display:block;width:calc(100% - 10px);padding:10px;text-align:center;color:#FFF;font-weight:bold;} 
+.box-login button {background:rgb(156, 17, 17);display:block;width:calc(100% - 10px);padding:10px;text-align:center;color:#FFF;font-weight:bold; border-radius:42px;} 
