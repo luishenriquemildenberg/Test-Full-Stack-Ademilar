@@ -1,0 +1,66 @@
+
+body{ 
+font-family: arial, helvetica, sans-serif;
+font-size: 12px;
+/* margin-left: 13px; */
+
+} 
+
+.menu {
+    position:relative; 
+    float: right;; 
+    border-right:1px solid #c0c0c0; 
+    margin-top: 25px    
+}
+ 
+.menu  a:hover{
+background: hsl(202, 66%, 60%); 
+color:#fff; 
+text-shadow:0px 0px 5px #c850c0;
+}
+
+.menu a {
+    font-size: 20px;
+    font-family: Courier new;
+    letter-spacing: normal;
+    padding: 16px;
+    text-transform: uppercase;
+    color: #efefef;
+}
+.img-fluide{
+    width: 100%;
+    height: 525px;
+    margin-top: -15px;
+}
+
+.cabecalho{
+    width: 100%;
+    height: 75px;
+    background-color:#707070;
+}
+
+ h5 {
+    margin-bottom: 19px;
+    font-size: 15px;
+    background-color: #efefef;
+}
+
+p {
+    color: #6e6d6d;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
+}
+li {
+    margin: 0 0 10px;
+    padding: 0;
+}
+.formulariocss{
+    width: 100%;
+    height: 10px;
+    background-color: aquamarine;
+}
+.observacao textarea{
+margin: 0px;
+}
