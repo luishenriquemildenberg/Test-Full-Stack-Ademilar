@@ -1,24 +1,29 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
-<head>
-	<title>Teste-Full-Stack</title>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-</head>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-<body>
+    <title>Teste Ademilar</title>
+  </head>
+  <body>    
+
 	<div class="principal-Login">
 		<div class="box-login">
-				<form method="POST" action="#">
+				<form method="POST" action="" onsubmit="return login()">
 					<span class="form-title">
 						<h1>Área do cliente</h1>
 					</span>
 					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="E-mail">
+						<input class="input100 form-required" type="text" name="email" placeholder="E-mail">
 					</div>
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100 form-required" type="password" name="pass" placeholder="Password">
 					</div>
 					<div class="container-login100-form-btn">
 						<button type="submit" class="login100-form-btn">
@@ -27,8 +32,70 @@
 					</div>
 			</div>
 	</div>
-	
+	 
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript">
+		
 
+		login = () => {
+
+			var valida = validaForm({
+				form: $('form'),
+				notValidate: true,
+				validate: true
+			})
+
+			if (valida) {
+			
+				$.ajax({
+					method:'POST'
+					, url: '/TesteAdemilar/api/login.php'
+					, data: $('form').serialize()
+					, dataType: 'JSON'
+				}).done((dados) => {
+
+					if(dados.cliente)
+					{ 
+						alert('Usuário Logado ');
+						location.href = '/TesteAdemilar/cliente.html'
+					}else{
+						alert('Usuário Inválido');
+					}
+
+				})
+
+			}
+			
+			return false;		
+		} 
+
+		//função valida informação em branco (form-required).
+		function validaForm(params) {
+    		var valida = true;
+    		var notpermitidos = ['', '__/__/____', undefined, null];
+    		var config = {
+    		    form: $("form"),
+    		    notValidate: false,
+    		}
+    		$.extend(config, params);
+
+    		var $form = config.form;
+    		$form.find('.form-required').each(function () {
+    		    var border = (!$(this).val()) ? '1px solid red' : '1px solid #cecece';
+
+    		    if ($.inArray($(this).val(), notpermitidos) == 0)
+    		        valida = false;
+
+    		    $(this).closest('input, textarea, select').css('border', border);
+    		});
+
+    		if (config.notValidate && !valida)
+    		    alert("Preencha todos os campos!");
+
+    		return valida;
+		}
+		 
+	</script>
 
 </body>
 
