@@ -18,25 +18,40 @@
   </head>
   <body> 
     <div class="container">
+		<br/>
         <h2>Cadastro de Cliente</h2>
         <div class="cssformulario">
-    <form method="POST" action="insert.php">
-         <div class="col-md-4 mb-3">
-             <label for="validationDefault01">Nome</label>
-             <input type="text" class="form-control" name="nome" id="validationDefault01" required>
-             <label for="validationDefaultUsername">E-mail</label>
-             <div class="input-group">
-                 <input type="text" class="form-control" name="email" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
-            </div>
-         </div>
-         <div class="col-md-4 mb-3">
-             <label for="validationSenha">Senha</label>
-             <input type="password" class="form-control" name="pass" id="senha01">
-         </div>
-         <div class="form-group">
-             <button class="btn btn-primary" type="submit">Confirmar</button>
-         </div>
-            <ul id="clientes"></ul>
+		
+		<form method="POST" action="insert.php">
+			<div class="mb-3">
+				<label for="validationDefault01">Nome</label>
+				<input type="text" class="form-control" name="nome" id="validationDefault01" required>
+				<label for="validationDefaultUsername">E-mail</label>
+				<div class="input-group">
+					<input type="text" class="form-control" name="email" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
+				</div>
+			</div>
+			<div class="mb-3">
+				<label for="validationSenha">Senha</label>
+				<input type="password" class="form-control" name="pass" id="senha01">
+			</div>
+			<div class="form-group">
+				<button class="btn btn-primary" type="submit">Confirmar</button>
+			</div>
+			<br/><br/>
+			
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Nome</th>
+						<th>E-mail</th>
+					</tr>
+				</thead>
+				<tbody id="clientes">
+				
+				</tbody>
+			</table>
+			
         </div>
         
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -53,7 +68,7 @@
 			
 			$('#clientes').html('')
 			$.each(dados.clientes,(a,v) => {
-				$('#clientes').append('<li>' + v.nome + ', <small>' + v.email + '</small></li>')
+				$('#clientes').append('<tr><td>' + v.nome + '</td><td><small>' + v.email + '</small></td></tr>')
 			})
 			
 		})
