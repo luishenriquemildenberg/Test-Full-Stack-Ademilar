@@ -24,7 +24,6 @@ if (isset($_POST['email']) && empty(!$_POST['email'])) {
             
            $q = $dbClass->execute($sql);
            return $q;       
-
         header("Location: index.html");
     } catch (PDOException $e) {
         echo $e->getMessage();
